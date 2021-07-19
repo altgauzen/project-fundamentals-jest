@@ -26,7 +26,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 jest.mock('../src/mockApi');
 describe('verifica o usuário', () => {
   api.fetchURL.mockImplementation(async () => {
-    return {
       gender: 'male',
       name: { first: 'Antônio', last: 'Britto' },
       location: {
@@ -38,7 +37,7 @@ describe('verifica o usuário', () => {
         password: '1234567890',
       },
     };
-  });
+  );
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {

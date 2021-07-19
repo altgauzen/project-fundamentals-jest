@@ -11,17 +11,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    return answerPhone(true).then((answer) => {
+  test('atende', () => answerPhone(true)
+    .then((answer) => {
       expect(answer).toBe('Oi!');
-    });
-  });
-
-  test('ocupado', () => {
-    return answerPhone(false).catch((answer) => {
-      expect(answer).toStrictEqual(Error('Infelizmente não podemos atender...'));
-    });
-  });
+    }));
+  test('ocupado', () => answerPhone(false).catch((answer) => {
+    expect(answer).toStrictEqual(Error('Infelizmente não podemos atender...'));
+  }));
 });
 
 /*  test('ocupado', () => {

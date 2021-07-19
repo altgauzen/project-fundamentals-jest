@@ -22,11 +22,6 @@ function fac(a) {
   return a;
 }
 
-function pow(a, b) {
-  const powResult = Math.pow(a, b);
-  return powResult;
-}
-
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
   mockFunctions.add = jest.fn((a, b) => (a + b));
@@ -61,7 +56,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.divide(729, 243)).toEqual(3);
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
-  mockFunctions.power = jest.fn((a, b) => pow(a, b));
+  mockFunctions.power = jest.fn((a, b) => (a ** b));
   test('testa função power', () => {
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power(2, 10)).toEqual(1024);

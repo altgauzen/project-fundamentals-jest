@@ -14,6 +14,19 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+function fac(a) {
+  if (a === 0 || a === 1) return 1;
+  for (let index = a - 1; index >= 1; index -= 1) {
+    a *= index;
+  }
+  return a;
+}
+
+function pow(a, b) {
+  const powResult = Math.pow(a, b);
+  return powResult;
+}
+
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
   mockFunctions.add = jest.fn((a, b) => (a + b));
@@ -48,6 +61,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.divide(729, 243)).toEqual(3);
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
+  mockFunctions.power = jest.fn((a, b) => pow(a, b));
   test('testa função power', () => {
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power(2, 10)).toEqual(1024);
@@ -55,6 +69,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.power(1, 10)).toEqual(1);
     expect(mockFunctions.power(0, 0)).toEqual(1);
   });
+  mockFunctions.factorial = jest.fn((a) => fac(a));
   test('testa função factorial', () => {
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);

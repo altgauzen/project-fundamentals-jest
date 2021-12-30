@@ -1,6 +1,18 @@
-## Termos de acordos
+# project-fundamentals-jest
 
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+## Meus Comentários
+
+Este foi um projeto individual feito na Trybe no Módulo de Fundamentos onde aprendí como testar códigos assíncronos e reaproveitar configurações entre testes.
+
+Aprendí neste Projeto a: 
+ - Escrever testes para funções assíncronas;
+ - Aplicar os seus conhecimentos acerca de testes utilizando o Jest;
+ - "Mockar" funções;
+ - "Mockar" APIs.
+
+Aproveitamento: 100% de aprovação pelos avaliadores da Trybe.
+
+---
 
 # Boas vindas ao repositório do projeto de Jest Assíncrono e Mocking!
 
